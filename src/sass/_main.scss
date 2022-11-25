@@ -15,7 +15,6 @@
     position: relative;
     margin: 10px;
    
-
     @include tablet {
         display: flex;
         width: 100%;
@@ -87,7 +86,7 @@
 .movie-card__thumb {
     display: flex;
     align-items: center;
-    color: var (--main-accent-color);
+    color: $accent-color;
 }
 
 .movie-info-title {
@@ -97,7 +96,7 @@
 
     text-align: left;
     text-transform: uppercase;
-    color: var (--title-color);
+    color: $secondary-text-color;
 
     @include tablet {
         width: 336px;
