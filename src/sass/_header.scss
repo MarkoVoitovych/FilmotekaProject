@@ -1,0 +1,124 @@
+.page-header {
+    padding-top: 40px;
+    padding-bottom: 62px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("#");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (min-width: $tablet) {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("#");
+    }
+
+    @media screen and (min-width: $desktop) {
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("#");
+    }
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 60px;
+
+    @media screen and (min-width: $tablet) {
+        padding-bottom: 40px;
+    }
+}
+
+.logo-span_link {
+    display: none;
+
+    @media screen and (min-width: $tablet) {
+        font-family: $primary-font-style;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 1.17;
+        display: flex;
+        color: $primary-text-color;
+    }
+}
+
+
+.navigation__list {
+    display: flex;
+
+}
+
+.navigation__item:first-child {
+    margin-left: 39px;
+}
+
+.navigation__link {
+    font-family: $primary-font-style;
+    font-weight: 500;
+    font-size: $primary-font-size;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: $primary-text-color;
+}
+
+.btn-group_list {
+    display: flex;
+    align-items: center;
+}
+
+.btn-group_item:first-child {
+    margin-left: 20px;
+
+    @media screen and (min-width: $tablet) {
+        margin-left: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-left: 16px;
+    }
+}
+
+.btn_library {
+    width: 129.53px;
+    height: 44px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+
+    font-family: $primary-font-style;
+    font-weight: 500;
+    font-size: $primary-font-size;
+    line-height: 1.333;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $primary-text-color;
+
+    @media screen and (min-width: $tablet) {
+        width: 152px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 148px;
+        height: 42px;
+    }
+}
+
+.btn_library:focus,
+.btn_library:hover,
+.btn_library:active {
+    border: 1px solid $accent-color;
+    background-color: $accent-color;
+    box-shadow: 0px 8px 43px rgba(255, 107, 1, 0.6);
+}
+
+.navigation__link--accent::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: $warning-text-color;
+    border-radius: 2px;
+    transform: scaleX(1);
+    transition: transform $time-hover $cubic-for-all;
+}
