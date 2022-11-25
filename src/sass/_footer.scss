@@ -1,0 +1,71 @@
+.footer {
+  bottom: 0;
+  padding: 30px 36px 30px 47px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.14;
+  background-color: $secondary-bgc;
+  color: $footer-text-color;
+
+  @media screen and (min-width: $tablet) {
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: 14px;
+    line-height: 1.18;
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 29px 390px 29px 408px;
+  }
+
+  &__heart {
+    color: $accent-color;
+    margin-left: 9px;
+    margin-right: 9px;
+    position: relative;
+  }
+  &__heart:hover {
+    color: $warning-text-color;
+  }
+  &__link {
+    text-decoration: underline;
+  }
+  &__link:hover {
+    color: $accent-color;
+  }
+
+  &__backdrop {
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 0;
+    position: fixed;
+  }
+  &__modal {
+    padding: 20px;
+    z-index: 10;
+    width: calc(100% - 40px);
+    height: 90vh;
+    border-radius: 50px;
+    color: $accent-color;
+    background-color: $primary-bgc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    text-align: center;
+    overflow-y: auto;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.team {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

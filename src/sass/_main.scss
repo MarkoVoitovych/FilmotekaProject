@@ -1,24 +1,21 @@
 .gallery {
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    // margin: -10px;
-
-    @include tablet {
-        margin: -16px;
-    }
+    gap: 16px;
 }
 
 .gallery__item {
     position: relative;
-    margin: 10px;
-   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    // margin: 10px;
+
     @include tablet {
-        display: flex;
         width: 100%;
-        justify-content: center;
         width: calc((100% - 4 * 16px) / 2);
     }
 
@@ -26,9 +23,9 @@
         width: calc((100% - 6 * 16px) / 3);
     }
 
-
     @include max-mobile {
         width: 280px;
+        height: 402px;
     }
 
     transition-property: scale;
@@ -46,9 +43,9 @@
     font-size: 12px;
     line-height: 1.2;
 
-    @include desktop {
-        font-size: 15px;
-    }
+    // @include desktop {
+    //     font-size: 15px;
+    // }
 }
 
 .movie-card__poster-container {
@@ -78,8 +75,8 @@
     }
 
     @include desktop {
-        width: 395px;
-        height: 575px;
+        width: 394px;
+        height: 574px;
     }
 }
 
@@ -91,25 +88,22 @@
 
 .movie-info-title {
     margin-bottom: 5px;
-    // font-size: inherit;
     font-size: 12px;
 
     text-align: left;
     text-transform: uppercase;
     color: $secondary-text-color;
 
-    @include tablet {
-        width: 336px;
-    }
+    // @include tablet {
+    //     width: 336px;
+    // }
 
-    @include desktop {
-        font-size: 15px;
-    }
+    // @include desktop {
+    //     font-size: 15px;
+    // }
 }
-
 
 .movie-info-list {
     display: flex;
     margin-right: 10px;
 }
-

@@ -2,7 +2,6 @@ $mobile: 320px;
 $tablet: 768px;
 $desktop: 1280px;
 
-
 @mixin pre-mobile {
     @media screen and (max-width: 479px) {
         @content;
