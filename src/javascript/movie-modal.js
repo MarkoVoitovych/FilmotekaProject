@@ -2,6 +2,7 @@ import { refs } from './refs';
 import { allProducts } from '/src/index';
 import { createModalMarkUp } from './renderMarkup';
 import { ThemoviedbAPI } from './themoviedbAPI';
+import BigPicture from 'bigpicture';
 
 const movieAPI = new ThemoviedbAPI();
 
@@ -41,6 +42,7 @@ async function onFilmCardClick(event) {
 
   try {
     movieAPI.fetchMovieById(filmId).then(result => {
+      // console.log(result);
       const data = result;
       const posterPath = data.poster_path
         ? `https://image.tmdb.org/t/p/w300${data.poster_path}`
@@ -65,6 +67,8 @@ async function onFilmCardClick(event) {
 
       createModalMarkUp(filmData);
 
+      getTrailer(filmId);
+
       const addToWatchedBtn = document.querySelector(
         '.lightbox-modal__watched-button'
       );
@@ -83,12 +87,43 @@ async function onFilmCardClick(event) {
   }
 }
 
+function getTrailer(filmId) {
+  try {
+    movieAPI.fetchTrailerById(filmId).then(result => {
+      const trailers = result.results;
+      if (trailers.length > 0) {
+        const trailerBtn = document.querySelector('.lightbox-modal__trailer');
+        trailerBtn.classList.remove('is-hidden');
+        const officialTrailer = trailers.find(
+          el => el.name === 'Official Trailer' || el.name.includes('Official')
+        );
+        const trailerKey = officialTrailer.key;
+
+        trailerBtn.addEventListener('click', ontrailerBtnClick);
+
+        function ontrailerBtnClick(e) {
+          BigPicture({
+            el: e.target,
+            ytSrc: `${trailerKey}`,
+          });
+        }
+      }
+    });
+  } catch {
+    er => {
+      console.log(er);
+    };
+  }
+}
+
 function onAddToWatchedClick(event) {
   event.preventDefault();
   event.target.textContent = 'Added to watched';
+  event.target.disabled = true;
 }
 
 function onAddToQuequeClick(event) {
   event.preventDefault();
   event.target.textContent = 'Added to queque';
+  event.target.disabled = true;
 }

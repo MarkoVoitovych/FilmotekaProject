@@ -88,6 +88,39 @@
     border-radius: 5px;
   }
 
+  &__trailer {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    width: 100px;
+    height: 44px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 6px;
+    border: none;
+    background-color: #ff6b01;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    color: #fff;
+    transform: scale(1);
+    @include transition(transform);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+  &__trailer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   &__data {
     display: flex;
     flex-direction: column;
@@ -193,6 +226,17 @@
     font-size: 12px;
     line-height: 1.33;
     color: #fff;
+    transform: scale(1);
+    @include transition(transform);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+    }
   }
 
   &__queque-button {
@@ -207,6 +251,16 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.33;
+    transform: scale(1);
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+    }
   }
 }
 
