@@ -1,16 +1,16 @@
 .page-header {
     padding-top: 40px;
     padding-bottom: 62px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("#");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/background_img_library320px.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 
     @media screen and (min-width: $tablet) {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("#");
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/background_img_library768px.jpg");
     }
 
     @media screen and (min-width: $desktop) {
-        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("#");
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("../images/background_img_library1280px.jpg");
     }
 }
 
@@ -120,5 +120,5 @@
     background-color: $warning-text-color;
     border-radius: 2px;
     transform: scaleX(1);
-    transition: transform $time-hover $cubic-for-all;
+    transition: transform 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
