@@ -1,0 +1,92 @@
+.header-library {
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 92px;
+    padding-top: 42px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (min-width: $mobile) {
+        height: 230px;
+    }
+
+    background: rgba(0, 0, 0, 0.56);
+    background-image: linear-gradient(to right,
+        rgba(0, 0, 0, 0.56),
+        rgba(0, 0, 0, 0.56)),
+    url(../images/background_img_library320px.jpg);
+
+    @media screen and (min-width: $tablet) {
+        height: 216px;
+        background-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0.56),
+                rgba(0, 0, 0, 0.56)),
+            url(../images/background_img_library768px.jpg);
+    }
+
+    @media screen and (min-width: $desktop) {
+        background-image: linear-gradient(to right,
+                rgba(0, 0, 0, 0.56),
+                rgba(0, 0, 0, 0.56)),
+            url(../images/background_img_library1280px.jpg);
+    }
+}
+
+.header-library__btn-list {
+    display: flex;
+    // justify-content: space-evenly;
+    justify-content: center;
+    margin-top: 50px;
+
+    @media screen and (min-width: $tablet) {
+        justify-content: center;
+    }
+}
+
+.header-library__btn {
+    padding: 14px 36px 12px 36px;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    color: $primary-text-color;
+    width: 130px;
+    height: 44px;
+    border-radius: 5px;
+    background-color: transparent;
+    border-color: $primary-text-color;
+    scale: 1;
+    cursor: pointer;
+    transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus,
+    &.is-active {
+        scale: 1.1;
+        box-shadow: (0px 8px 43px rgba(255, 107, 1, 0.6));
+        background-color: $accent-color;
+        border: $accent-color;
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 152px;
+        height: 44px;
+        margin-right: 32px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: 147px;
+        height: 42px;
+        margin-right: 20px;
+    }
+}
+
+.header-library__btn:last-child {
+    margin-left: 20px;
+}
+
+// .js-library-watched-btn {
+//     &curent {}
+// }
+
+// .js-library-queue-btn {}
