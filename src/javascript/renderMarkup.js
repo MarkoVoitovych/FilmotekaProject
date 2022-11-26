@@ -15,13 +15,13 @@ export function renderMarkup(data, genres) {
   const releaseYear = new Date(Date.parse(release_date)).getFullYear();
 
   return `<li class="gallery__item movie-card" data-id="${id}">
-                  <div class="movie-card__poster-container">
+                  <div class="movie-card__poster-thumb">
                     <img src="${posterPath}"
                         class="movie-card__poster"
                         alt="${original_title}"
                                             />
                   </div>
-                  <div class="movie-card__thumb">
+                  <div class="movie-card__wrap">
                       <h2 class="movie-info-title"> ${original_title}</h2>
                       <div class="movie-info-list">
                       <p class="info-item-genre">${genres}</p>
@@ -111,7 +111,7 @@ ${overview}
           }
         });
       },
-      onClose: instance => { },
+      onClose: instance => {},
     }
   );
   instance.show();
