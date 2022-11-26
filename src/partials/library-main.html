@@ -1,5 +1,48 @@
-<section class="section gallery-section">
-  <div class="container">
-    <ul class="library"></ul>
+<!-- THEME -->
+<div class="toolbar">
+  <div class="theme-switch">
+    <div class="theme-switch__control">
+      <input
+        class="theme-switch__toggle"
+        type="checkbox"
+        name="theme"
+        id="theme-switch-toggle"
+        aria-label="switch theme"
+      />
+      <label
+        aria-hidden="true"
+        class="theme-switch__track"
+        for="theme-switch-toggle"
+      >
+      </label>
+      <div aria-hidden="true" class="theme-switch__marker"></div>
+    </div>
   </div>
-</section>
+</div>
+<main id="main" class="main main-container main-container--gallery">
+  <!-- EMPTY LIST -->
+  <!-- here will be example background, when our movies don`t show -->
+
+  <section class="section gallery-section library js-gallery-section">
+    <h2 class="visually-hidden">Gallery with movies</h2>
+    <div class="container library-container js-container">
+      <ul class="gallery gallery--library"></ul>
+    </div>
+  </section>
+
+  <!-- SMOOTH SCROLL -->
+  <div class="btn-up">
+    <p class="btn-up-text">UP</p>
+    <button
+      class="btn-up-wrapper__btn"
+      id="to-top-btn"
+      title="Go to top"
+    ></button>
+  </div>
+
+  <!-- SPINNER -->
+  <div class="preloader">
+    <div class="loader"></div>
+    <div class="loader-wave">Loading...</div>
+  </div>
+</main>
