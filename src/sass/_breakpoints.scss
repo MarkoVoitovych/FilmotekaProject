@@ -33,28 +33,29 @@ $desktop: 1280px;
 }
 
 @mixin min-max-tablet {
-  @media (min-width: 768px) and (max-width: 1199.98px) {
+  @media (min-width: 768px) and (max-width: 1279.98px) {
     @content;
   }
 }
 
 @mixin max-tablet {
-  @media screen and (max-width: 1199.98px) {
+  @media screen and (max-width: 1279.98px) {
     @content;
   }
 }
 
 @mixin desktop {
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1280px) {
     @content;
   }
 }
 
 @mixin retina {
+
   @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+  (-webkit-min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
     @content;
   }
 }
