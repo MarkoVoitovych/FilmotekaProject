@@ -106,6 +106,7 @@
 // MODAL-BTN-CLOSE
 .modal__button-close {
   position: absolute;
+  z-index: 1;
   top: 20px;
   right: 30px;
   padding: 0;

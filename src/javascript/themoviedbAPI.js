@@ -10,6 +10,10 @@ export class ThemoviedbAPI {
   #query = '';
   genres = [];
 
+  constructor() {
+    this.WATCH_KEY = 'Watched';
+    this.QUEUE_KEY = 'Queue';
+  }
   async fetchFavouritesMovies() {
     const params = new URLSearchParams({
       api_key: this.#API_KEY,
