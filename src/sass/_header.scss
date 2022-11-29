@@ -5,17 +5,23 @@
     background-position: center;
   }
 
+ 
+
+  .input-error{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+    color: red;
+    padding-top: 16px;
+    display: flex;
+    justify-content: center
+    
+  }
+
   .header-title{
     display: none;
   }
 
-
-  // .header-title {
-  //   color: var(--primary-text-color);
-  //   font-weight: 500;
-  //   font-size: 30px;
-  //   line-height: 1.17;
-  // }
 
   .header-wraper {
     padding-top: 40px;
@@ -24,7 +30,9 @@
     justify-content: space-between;
     align-items: center;
   }
-
+.test1{
+  padding-bottom: 47px;
+}
   .navigation-list {
     display: flex;
     
@@ -48,7 +56,7 @@
 
   .form-search {
     position: relative;
-    padding-bottom: 92px
+    // padding-bottom: 92px
     // display: inline-block;
   }
 
@@ -136,7 +144,7 @@
 
   .form-search {
     position: relative;
-    padding-bottom: 80px
+    // padding-bottom: 80px
   }
     
   }

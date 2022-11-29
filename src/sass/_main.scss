@@ -287,6 +287,9 @@ body.dark-theme {
   display: flex;
   justify-content: flex-end;
   padding: 16px 24px;
+  position: absolute;
+  top: -3px;
+  right: -3px;
 }
 
 .theme-switch {
@@ -307,8 +310,8 @@ body.dark-theme {
   align-items: center;
   flex-shrink: 0;
   position: relative;
-  width: 64px;
-  height: 32px;
+  width: 50px;
+  height: 20px;
   border-radius: 50em;
   padding: 3px 0;
   box-shadow: inset 0.5px 0.5px 1px #babecc, inset -0.5px -0.5px 1px rgb(97, 7, 7);
@@ -349,8 +352,8 @@ body.dark-theme {
 .theme-switch__marker {
   position: relative;
   background-color: transparent;
-  width: 26px;
-  height: 26px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   z-index: 2;
   pointer-events: none;
@@ -368,7 +371,7 @@ body.dark-theme {
 }
 
 .theme-switch__toggle:checked ~ .theme-switch__marker {
-  transform: translateX(35px);
+  transform: translateX(31px);
   background-color: transparent;
   box-shadow: inset -4px -0.5px 1px 1px rgb(255, 221, 0);
 }

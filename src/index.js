@@ -51,14 +51,34 @@ async function startPage() {
 const onSearchFormSubmit = async event => {
   event.preventDefault();
   themoviedbAPI.query = event.target.elements.search.value;
+  console.log(refs.formEl.elements.search);
 
   try {
     const searchMovies = await themoviedbAPI.fetchMoviesByQuery();
-    const markup = searchMovies.results.map(renderMarkup).join('');
+    const markup = searchMovies.results
+    .map(movie => {
+      const genresName = [];
+
+      movie.genre_ids.forEach(genre => {
+        themoviedbAPI.genres.forEach(item => {
+          if (item.id === genre) {
+            genresName.push(item.name);
+          }
+        });
+      });
+      if (genresName.length > 2) {
+        genresName.splice(2, genresName.length - 1, 'Other');
+      }
+      return renderMarkup(movie, genresName.join(', '));
+    })
+    .join('');
     refs.gallery.innerHTML = markup;
     allProducts = [...getItems()];
   } catch (err) {
-    console.log(err);
+    refs.formEl.insertAdjacentHTML("afterend", 
+    `<div class='input-error'>
+    Search result not successful. Enter the correct movie and name 
+    </div>`)
   }
   event.target.reset();
 };
