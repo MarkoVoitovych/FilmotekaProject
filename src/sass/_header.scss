@@ -1,4 +1,10 @@
+  .main-container{
+  min-height: calc(100vh - 100px);
+}
+  
+  
   .header {
+    height: 216px;
     background-image: url(../images/abstract-background-with-red-lines\ 320.jpg);
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -8,6 +14,22 @@
   .header-title{
     display: none;
   }
+
+  .input-error{
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.14;
+  }
+
+//   .zaz{
+//     flex-direction: column;
+//     align-items: center;
+//     display: flex;
+// }
+  
 
 
   // .header-title {
@@ -44,11 +66,11 @@
   .header-search-form {
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
   }
 
   .form-search {
     position: relative;
-    padding-bottom: 92px
     // display: inline-block;
   }
 
@@ -136,8 +158,11 @@
 
   .form-search {
     position: relative;
-    padding-bottom: 80px
   }
+
+  // .search-btn{
+  //   right: 25px;
+  // }
     
   }
 
@@ -147,6 +172,9 @@
       }
     .form-input{
       width: 394px;
+      // .search-btn{
+      //   right: 0px;
+      // }
 
 }
   }

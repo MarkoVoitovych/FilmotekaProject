@@ -48,13 +48,29 @@ async function startPage() {
   allProducts = [...getItems()];
 }
 
+const zzz=document.querySelector('.input-error');
+console.log(zzz);
 async function onSearchFormSubmit(event) {
   event.preventDefault();
   themoviedbAPI.query = event.target.elements.search.value;
 
+  
   try {
     spinnerPlay()
     const searchMovies = await themoviedbAPI.fetchMoviesByQuery(page);
+    
+    
+  
+    // if (searchMovies.results.length===0){
+    //   refs.formEl.insertAdjacentHTML("afterend", `<div class="input-error">
+    //   Search result not successful. Enter the correct movie and name  
+    //   </div>
+    //   `)
+     
+    //   // event.target.elements.search
+    // }
+    
+    
     const markup = searchMovies.results.map(movie => {
       const genres = renderGenres(movie)
       return renderMarkup(movie, genres);
@@ -68,12 +84,16 @@ async function onSearchFormSubmit(event) {
     refs.gallery.innerHTML = markup;
     allProducts = [...getItems()];
 
-    if (totalMovies === 0) {
+    if (searchMovies.results.length === 0) {
+      refs.formEl.insertAdjacentHTML("afterend", `<div class="input-error">
+       Search result not successful. Enter the correct movie and name  
+      </div>`)
       refs.paginationContainer.style.display = 'none';
     } else {
       refs.paginationContainer.style.display = 'block';
     }
   } catch (err) {
+    
     console.log(err);
   } finally {
     spinnerStop()
