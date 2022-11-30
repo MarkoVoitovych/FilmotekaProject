@@ -10,10 +10,17 @@ import { spinnerPlay, spinnerStop } from './javascript/spiner';
 import { callfooterModal } from './javascript/footerModal';
 import { scrollPage, scrollFunction } from './javascript/scroll';
 import { renderGenres } from './javascript/renderGenres';
-import { paginOptions } from './javascript/paginOptions';
+import { paginOptions, paginOptionsLess } from './javascript/paginOptions';
 
 const themoviedbAPI = new ThemoviedbAPI();
-const pagination = new Pagination(refs.paginationContainer, paginOptions);
+let options;
+if (window.screen.width <= 480) {
+  options = paginOptionsLess;
+} else {
+  options = paginOptions;
+}
+const pagination = new Pagination(refs.paginationContainer, options);
+
 const page = pagination.getCurrentPage();
 export let allProducts = null;
 
@@ -70,9 +77,12 @@ async function onSearchFormSubmit(event) {
     allProducts = [...getItems(refs.gallery)];
 
     if (searchMovies.total_results === 0) {
-      refs.formEl.insertAdjacentHTML("afterend", `<div class="input-error">
+      refs.formEl.insertAdjacentHTML(
+        'afterend',
+        `<div class="input-error">
        Search result not successful. Enter the correct movie and name  
-      </div>`)
+      </div>`
+      );
       refs.paginationContainer.style.display = 'none';
     } else {
       refs.paginationContainer.style.display = 'block';
